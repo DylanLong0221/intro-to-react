@@ -13,10 +13,14 @@
       class Hello extends React.Component{
         render() {
           return (
-            <div>
-            <h1>Hello</h1>
-            <p>This is just a test, but thanks for looking</p>
-            <button>Click me</button>
+            <div className="shopping-list">
+              <h1>My Favorite Sports to Watch</h1>
+              <ul>
+                <li>Basketball</li>
+                <li>Football</li>
+                <li>Soccer</li>
+              </ul>
+              <button onClick={function() {console.log("You Clicked The Button!")}}>Hey</button>
             </div>
           );
         }
