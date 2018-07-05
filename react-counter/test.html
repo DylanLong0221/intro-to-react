@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="hello"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+    <script type="text/babel">
+      class Hello extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+              age: 18,
+              gender: "male"
+            }
+          }
+
+        render() {
+          return (
+            <div className="Sports">
+              <h1>My Favorite Sports to Watch</h1>
+              <ul>
+                <li>Basketball</li>
+                <li>Football</li>
+                <li>Soccer</li>
+              </ul>
+              <button onClick={function() {console.log("You Clicked The Button!")}}>Hey</button>
+              <h1>Current Age: {this.state.age}</h1>
+              <h2>Gender: {this.state.gender}</h2>
+              <h3>Height: {this.props.height}</h3>
+              <h4>Weight: {this.props.weight}</h4>
+            </div>
+          );
+        }
+      }
+
+      const info = {
+        weight : 150,
+       }
+
+       Hello.defaultProps = {
+         height : "6Ft",
+       }
+
+
+       ReactDOM.render(
+         <Hello
+         weight={info.weight}/>,document.getElementById('hello')
+       );
+    </script>
+  </body>
+</html>
