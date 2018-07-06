@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       todos: [
-        {description: 'Walk the cat', isCompleted: true},
+        {description: 'Walk the cat', isCompleted: false},
         {description: 'Throw the dishes away', isCompleted: false},
         {description: 'Buy new dishes', isCompleted: false}
       ],
@@ -33,12 +33,17 @@ class App extends Component {
     this.setState({todos: todos});
   }
 
+  deleteToDo = (e)=>{
+   console.log(e.target.value);
+
+  }
+
   render() {
     return (
       <div className="App">
       <ul>
       { this.state.todos.map( (todo, index) =>
-          <ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
+          <ToDo deleteToDo={this.deleteToDo} key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
                   )}
       </ul>
       <form onSubmit={(e) => this.handleSubmit(e)}>
