@@ -34,8 +34,7 @@ class App extends Component {
   }
 
   deleteToDo = (e)=>{
-   console.log(e.target.value);
-
+    console.log(e);
   }
 
   render() {
@@ -43,7 +42,7 @@ class App extends Component {
       <div className="App">
       <ul>
       { this.state.todos.map( (todo, index) =>
-          <ToDo deleteToDo={this.deleteToDo} key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
+          <ToDo deleteToDo={this.deleteToDo(index)} key={ index } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index) } />
                   )}
       </ul>
       <form onSubmit={(e) => this.handleSubmit(e)}>
